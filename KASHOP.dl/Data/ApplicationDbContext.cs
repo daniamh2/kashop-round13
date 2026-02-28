@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using KASHOP.dal.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace KASHOP.dal.Data
+{
+    public class ApplicationDbContext :DbContext
+    {
+        public DbSet<Category> Categories {  get; set; }
+        public DbSet<CategoryTranslation> CategoriesTranslations { get; set; }
+       
+        public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+
+        }
+
+        
+    }
+}

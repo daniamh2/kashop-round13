@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KASHOP.pl", "KASHOP.pl\KASHOP.pl.csproj", "{3AA77727-CDAD-42FC-9D54-34C3B4ADDCAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KASHOP.bll", "bll\KASHOP.bll.csproj", "{0282A72F-60EC-4752-B333-D1992617196A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KASHOP.dal", "KASHOP.dl\KASHOP.dal.csproj", "{528E2766-37B3-42A2-BDA8-E458FA1445C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AA77727-CDAD-42FC-9D54-34C3B4ADDCAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AA77727-CDAD-42FC-9D54-34C3B4ADDCAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AA77727-CDAD-42FC-9D54-34C3B4ADDCAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AA77727-CDAD-42FC-9D54-34C3B4ADDCAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0282A72F-60EC-4752-B333-D1992617196A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0282A72F-60EC-4752-B333-D1992617196A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0282A72F-60EC-4752-B333-D1992617196A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0282A72F-60EC-4752-B333-D1992617196A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{528E2766-37B3-42A2-BDA8-E458FA1445C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{528E2766-37B3-42A2-BDA8-E458FA1445C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{528E2766-37B3-42A2-BDA8-E458FA1445C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{528E2766-37B3-42A2-BDA8-E458FA1445C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0B4E279-A1D0-4ACB-AE55-CAE42E007C06}
+	EndGlobalSection
+EndGlobal

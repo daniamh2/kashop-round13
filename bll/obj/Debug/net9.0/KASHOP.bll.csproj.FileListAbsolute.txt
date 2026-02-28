@@ -1,0 +1,15 @@
+C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Debug\net9.0\KASHOP.bll.csproj.AssemblyReference.cache
+C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Debug\net9.0\KASHOP.bll.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Debug\net9.0\KASHOP.bll.AssemblyInfoInputs.cache
+C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Debug\net9.0\KASHOP.bll.AssemblyInfo.cs
+C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Debug\net9.0\KASHOP.bll.csproj.CoreCompileInputs.cache
+C:\Users\-\Documents\api\round13\KASHOP\bll\bin\Debug\net9.0\KASHOP.bll.deps.json
+C:\Users\-\Documents\api\round13\KASHOP\bll\bin\Debug\net9.0\KASHOP.bll.dll
+C:\Users\-\Documents\api\round13\KASHOP\bll\bin\Debug\net9.0\KASHOP.bll.pdb
+C:\Users\-\Documents\api\round13\KASHOP\bll\bin\Debug\net9.0\KASHOP.dal.dll
+C:\Users\-\Documents\api\round13\KASHOP\bll\bin\Debug\net9.0\KASHOP.dal.pdb
+C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Debug\net9.0\KASHOP.bll.csproj.Up2Date
+C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Debug\net9.0\KASHOP.bll.dll
+C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Debug\net9.0\refint\KASHOP.bll.dll
+C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Debug\net9.0\KASHOP.bll.pdb
+C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Debug\net9.0\ref\KASHOP.bll.dll

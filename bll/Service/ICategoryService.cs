@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using KASHOP.dal.DTO.Response ;
 using KASHOP.dal.DTO.Request;
+using KASHOP.dal.DTO.Response ;
 using KASHOP.dal.Models;
 
 namespace KASHOP.bll.Service
@@ -13,5 +14,6 @@ namespace KASHOP.bll.Service
     {
         Task <List<CategoryResponse>> GetAllCategories();
         Task <CategoryResponse> CreateCategory(CategoryRequest request);
+        Task<CategoryResponse> GetCategory(Expression<Func<Category, bool>> filter);
     }
 }

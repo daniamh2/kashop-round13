@@ -25,7 +25,7 @@ namespace KASHOP.pl.Controllers
             _categoryService = categoryService;
         }
         [HttpGet]
-        public IActionResult Index() {
+        public  async Task<IActionResult> Index() {
             var response = _categoryService.GetAllCategories();
 
             return Ok(new
@@ -35,7 +35,7 @@ namespace KASHOP.pl.Controllers
             });
         }
         [HttpPost]
-        public IActionResult Create(CategoryRequest request)
+        public async Task<IActionResult> Create(CategoryRequest request)
         {
             var response = _categoryService.CreateCategory(request);
 
@@ -45,6 +45,11 @@ namespace KASHOP.pl.Controllers
                 data = response,
                 message = _localizer["success"].Value
             });
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            return Ok(await _categoryService.GetCategory(c => c.Id == id));
         }
     }
 

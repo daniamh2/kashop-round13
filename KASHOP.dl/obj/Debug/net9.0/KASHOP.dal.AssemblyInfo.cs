@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KASHOP.dal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdabb6dd3a05cae76e779aeeed7e774db9c71b94")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81ea1260ab18dc6ed5265f53079c4b1dee628eac")]
 [assembly: System.Reflection.AssemblyProductAttribute("KASHOP.dal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KASHOP.dal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

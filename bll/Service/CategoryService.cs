@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using KASHOP.dal.DTO.Request;
+using KASHOP.dal.DTO.Response;
+using KASHOP.dal.Models;
+using KASHOP.dal.Repository;
+using Mapster;
+
+namespace KASHOP.bll.Service
+{
+    public class CategoryService : ICategoryService
+    {
+        private readonly ICategoryRepository _categoryRepository;
+        public CategoryService(ICategoryRepository categoryRepository) {
+        
+            _categoryRepository = categoryRepository;
+        }
+
+        public async Task <CategoryResponse> CreateCategory(CategoryRequest request)
+        {
+            var category = request.Adapt<Category>();
+            await _categoryRepository.CreateAsync(category);
+            return category.Adapt<CategoryResponse>();
+        }
+
+        public async Task <List<CategoryResponse>> GetAllCategories()
+        {
+            var categories = await _categoryRepository.GetAllAsync(new string[] {nameof (Category.Translations)});
+            return categories.Adapt<List<CategoryResponse>>();
+
+        }
+    }
+}

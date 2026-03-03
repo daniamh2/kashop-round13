@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using KASHOP.dal.Models;
 
-namespace KASHOP.dal.DTO.Response
+namespace KASHOP.dal.Repository
 {
-    public class CategoryResponse
-    {
-        public List<CategoryTranslation> Translations { get; set; }
+    public interface ICategoryRepository: IGenericRepository<Category>
+{
 
     }
 }

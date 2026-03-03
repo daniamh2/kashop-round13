@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using KASHOP.dal.Data;
+using KASHOP.dal.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace KASHOP.dal.Repository
+{
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    {
+        private readonly ApplicationDbContext _context;//NO NEW BEACAUSE IT ALLOCAE HEAP PRIVATE AND READONLY TO ASSURE NOT CHANGE
+        public GenericRepository(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<T> CreateAsync(T entity)
+        {
+            await _context.AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entity;
+        }
+
+        public async Task<List<T>> GetAllAsync(string[]? includes = null)
+        {
+            IQueryable<T> query = _context.Set<T>();
+            if(includes != null)
+            {
+                foreach(var include in includes)
+                {
+                    query = query.Include(include);
+                }
+            }
+            return await query.ToListAsync();
+
+
+        }
+    }
+}
+

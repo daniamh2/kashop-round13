@@ -8,7 +8,6 @@ namespace KASHOP.dal.DTO.Request
 {
     public class CategoryRequest
     {
- 
         public List<CategoryTranslationRequest> Translations { get; set; }
     }
 }

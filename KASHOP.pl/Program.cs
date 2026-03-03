@@ -1,6 +1,8 @@
 
 using System.Globalization;
+using KASHOP.bll.Service;
 using KASHOP.dal.Data;
+using KASHOP.dal.Repository;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -27,9 +29,9 @@ namespace KASHOP.pl
             const string defaultCulture = "en-GB";
             var supportedCultures = new[]
             {
-    new CultureInfo(defaultCulture),
-    new CultureInfo("ar")
-};
+                new CultureInfo(defaultCulture),
+                new CultureInfo("ar")
+            };
             builder.Services.Configure<RequestLocalizationOptions>(options => {
                 options.DefaultRequestCulture = new RequestCulture(defaultCulture);
                 options.SupportedCultures = supportedCultures;
@@ -42,6 +44,10 @@ namespace KASHOP.pl
                 //});
                 options.RequestCultureProviders.Add(new AcceptLanguageHeaderRequestCultureProvider());//for header
             });
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<ICategoryService , CategoryService>();
+
+
             var app = builder.Build();
             app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
 
@@ -55,7 +61,6 @@ namespace KASHOP.pl
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

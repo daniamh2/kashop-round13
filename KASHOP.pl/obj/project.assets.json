@@ -1650,7 +1650,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "KASHOP.dal": "1.0.0"
+          "KASHOP.dal": "1.0.0",
+          "Mapster": "7.4.0"
         },
         "compile": {
           "bin/placeholder/KASHOP.bll.dll": {}
@@ -4824,7 +4825,6 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "KASHOP.bll >= 1.0.0",
-      "Mapster >= 7.4.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.12",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.5"
     ]
@@ -4883,10 +4883,6 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
-          "Mapster": {
-            "target": "Package",
-            "version": "[7.4.0, )"
-          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[9.0.12, )"

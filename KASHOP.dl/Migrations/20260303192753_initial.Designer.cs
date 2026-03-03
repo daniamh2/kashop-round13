@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KASHOP.dal.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260228202333_translations")]
-    partial class translations
+    [Migration("20260303192753_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

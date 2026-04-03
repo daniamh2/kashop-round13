@@ -12,3 +12,4 @@ C:\Users\-\Documents\api\round13\KASHOP\KASHOP.dl\obj\Release\net9.0\refint\KASH
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.dl\obj\Release\net9.0\KASHOP.dal.pdb
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.dl\obj\Release\net9.0\KASHOP.dal.genruntimeconfig.cache
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.dl\obj\Release\net9.0\ref\KASHOP.dal.dll
+C:\Users\-\Documents\api\round13\KASHOP\KASHOP.dl\obj\Release\net9.0\KASHOP.dal.sourcelink.json

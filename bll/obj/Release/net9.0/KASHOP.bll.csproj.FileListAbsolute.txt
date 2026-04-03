@@ -13,3 +13,4 @@ C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Release\net9.0\KASHOP.bll.dll
 C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Release\net9.0\refint\KASHOP.bll.dll
 C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Release\net9.0\KASHOP.bll.pdb
 C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Release\net9.0\ref\KASHOP.bll.dll
+C:\Users\-\Documents\api\round13\KASHOP\bll\obj\Release\net9.0\KASHOP.bll.sourcelink.json

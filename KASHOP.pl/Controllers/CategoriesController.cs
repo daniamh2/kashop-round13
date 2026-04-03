@@ -5,6 +5,7 @@ using KASHOP.dal.Models;
 using KASHOP.dal.Repository;
 using KASHOP.pl.Resources;
 using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,7 @@ namespace KASHOP.pl.Controllers
             _categoryService = categoryService;
         }
         [HttpGet]
+
         public  async Task<IActionResult> Index() {
             var response =await _categoryService.GetAllCategories();
 
@@ -35,10 +37,10 @@ namespace KASHOP.pl.Controllers
             });
         }
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create(CategoryRequest request)
         {
             var response = await _categoryService.CreateCategory(request);
-
 
             return Ok(new
             {
@@ -46,11 +48,23 @@ namespace KASHOP.pl.Controllers
                 message = _localizer["success"].Value
             });
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             return Ok(await _categoryService.GetCategory(c => c.Id == id));
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var deleted = await _categoryService.DeleteCategory(id);
+            if (!deleted) {
+                return NotFound(new{ message = _localizer["not found"].Value });
+            }
+            return Ok(new { message = _localizer["success"].Value });
+
+        }
+
     }
 
 }

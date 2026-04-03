@@ -9,6 +9,10 @@ C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Azure.Identity.dll
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Mapster.dll
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Mapster.Core.dll
+C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
@@ -21,6 +25,8 @@ C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.Extensions.Identity.Core.dll
+C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.Extensions.Logging.dll
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\-\Documents\api\round13\KASHOP\KASHOP.pl\obj\Release\net9.0\PubTmp\Out\Microsoft.Extensions.Options.dll

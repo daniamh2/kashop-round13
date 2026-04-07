@@ -1,6 +1,7 @@
 
 using System.Globalization;
 using System.Text;
+using KASHOP.bll.Mapping;
 using KASHOP.bll.Service;
 using KASHOP.dal.Data;
 using KASHOP.dal.Models;
@@ -65,9 +66,12 @@ namespace KASHOP.pl
             });
 
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
 
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+            builder.Services.AddScoped<IFileService, FileService>();
+            builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<ISeedData, RoleSeedData>();
             builder.Services.AddTransient<IEmailSender, EmailSender>();
 
@@ -77,10 +81,17 @@ namespace KASHOP.pl
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options=>
             {
                 options.User.RequireUniqueEmail = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 10;
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
             }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
             builder.Services.AddAuthorization();
-
+            MapsterConfig.MapsterConfigRegister();
             builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -115,7 +126,7 @@ namespace KASHOP.pl
             app.UseAuthentication();
 
             app.UseAuthorization();
-
+            app.UseStaticFiles();
             app.MapControllers();
             app.UseCors(MyAllowSpecificOrigins);
 

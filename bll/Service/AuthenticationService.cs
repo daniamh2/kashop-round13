@@ -11,9 +11,14 @@ using KASHOP.dal.Models;
 using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using static System.Net.WebRequestMethods;
+using ForgotPasswordRequest = KASHOP.dal.DTO.Request.ForgotPasswordRequest;
+using LoginRequest = KASHOP.dal.DTO.Request.LoginRequest;
+using RegisterRequest = KASHOP.dal.DTO.Request.RegisterRequest;
+using ResetPasswordRequest = KASHOP.dal.DTO.Request.ResetPasswordRequest;
 
 namespace KASHOP.bll.Service
 {
@@ -56,7 +61,8 @@ namespace KASHOP.bll.Service
             return new RegisterResponse()
             {
                 Success = false,
-                Message = "error"
+                Message = "error",
+                Errors = result.Errors.Select(p => p.Description).ToList()
             };
         }
         public async Task<LoginResponse> LoginAsync(LoginRequest request)
@@ -103,6 +109,88 @@ namespace KASHOP.bll.Service
             var result =await _userManager.ConfirmEmailAsync(user, token);
             if (result.Succeeded) return true;
             return false;
+        }
+
+        public async Task <ForgotPasswordResponse> RequestPasswordReset(ForgotPasswordRequest request)
+        {
+            var user = await _userManager.FindByEmailAsync(request.Email);
+            if(user is null)
+            {
+                return new ForgotPasswordResponse()
+                {
+                    Message = "Email Not Found",
+                    Success = false
+                };
+            }
+            var random = new Random();
+            var code = random.Next(1000,9999).ToString();
+            user.PasswordResetCode = code;
+            user.PasswordResetCodeExpiry = DateTime.UtcNow.AddMinutes(15);
+            await _userManager.UpdateAsync(user);
+            await _emailSender.SendEmailAsync(request.Email, "reset password", $"<p> reset password is {code}</p>");
+            return new ForgotPasswordResponse()
+            {
+                Success = true,
+                Message = "code sent to  your email"
+            };
+
+        }
+        public async Task<ResetPasswordResponse> ResetPasswordAsync(ResetPasswordRequest request)
+        {
+            var user = await _userManager.FindByEmailAsync(request.Email);
+            if (user is null)
+            {
+                return new ResetPasswordResponse()
+                {
+                    Message = "Email Not Found",
+                    Success = false
+                };
+            }
+            else if (user.PasswordResetCode != request.code)
+            {
+                return new ResetPasswordResponse()
+                {
+                    Message = "invalid code",
+                    Success = false
+                };
+
+            }
+            else if (user.PasswordResetCodeExpiry < DateTime.UtcNow)
+            {
+                return new ResetPasswordResponse()
+                {
+                    Message = "code Expired",
+                    Success = false
+                };
+
+            }
+            var isSamePassword = await _userManager.CheckPasswordAsync(user, request.NewPassword);
+            if (isSamePassword)
+            {
+                return new ResetPasswordResponse()
+                {
+                    Success = false,
+                    Message = "new password must be different from old password"
+                };
+
+            }
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var result = await _userManager.ResetPasswordAsync(user, token, request.NewPassword);
+            if (!result.Succeeded)
+            {
+                return new ResetPasswordResponse()
+                {
+                    Message = "password reset failed",
+                    Success = false
+                };
+            }
+            await _emailSender.SendEmailAsync(request.Email, "change password", $"<p>your password is changed</p>");
+            return new ResetPasswordResponse()
+            {
+                Message = "password reset succefully",
+                Success = true
+            };
+
         }
     }
 

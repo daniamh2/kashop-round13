@@ -17,6 +17,8 @@ namespace KASHOP.dal.Data
         private readonly IHttpContextAccessor _httpContextAccessor;
         public DbSet<Category> Categories { get; set; }
         public DbSet<CategoryTranslation> CategoriesTranslations { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductTranslation> ProductTranslations { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
             IHttpContextAccessor httpContextAccessor) : base(options)
@@ -31,6 +33,25 @@ namespace KASHOP.dal.Data
             builder.Entity<ApplicationUser>().ToTable("Users");
             builder.Entity<IdentityRole>().ToTable("Roles");
             builder.Entity<IdentityUserRole<String>>().ToTable("UserRoles");
+
+            builder.Entity<Category>().HasOne(p => p.CreatedBy)
+                .WithMany().HasForeignKey(p => p.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Category>().HasOne(p => p.UpdatedBy)
+                .WithMany().HasForeignKey(p => p.UpdatedById)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Product>().HasOne(p => p.CreatedBy)
+                .WithMany().HasForeignKey(p => p.CreatedById)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+            builder.Entity<Product>().HasOne(p => p.UpdatedBy)
+                .WithMany().HasForeignKey(p => p.UpdatedById)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
         }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

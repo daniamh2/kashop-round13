@@ -11,6 +11,6 @@ namespace KASHOP.dal.DTO.Response
         public string Name { get; set; }
         public string Language { get; set; }
 
-    }
+}
 
 }

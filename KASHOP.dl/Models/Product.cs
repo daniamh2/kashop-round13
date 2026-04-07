@@ -16,6 +16,8 @@ namespace KASHOP.dal.Models
         public string MainImage { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+        public int BrandId { get; set; }
+        public Brand Brand { get; set; }
         public List <ProductTranslation> Translations { get; set; }
 
 

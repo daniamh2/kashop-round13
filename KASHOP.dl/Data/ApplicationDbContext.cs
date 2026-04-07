@@ -19,6 +19,8 @@ namespace KASHOP.dal.Data
         public DbSet<CategoryTranslation> CategoriesTranslations { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductTranslation> ProductTranslations { get; set; }
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<BrandTranslation> BrandTranslations { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
             IHttpContextAccessor httpContextAccessor) : base(options)
@@ -51,6 +53,13 @@ namespace KASHOP.dal.Data
                 .WithMany().HasForeignKey(p => p.UpdatedById)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Entity<Brand>().HasOne(p => p.CreatedBy)
+            .WithMany().HasForeignKey(p => p.CreatedById)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Brand>().HasOne(p => p.UpdatedBy)
+            .WithMany().HasForeignKey(p => p.UpdatedById)
+            .OnDelete(DeleteBehavior.Restrict);
 
         }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
